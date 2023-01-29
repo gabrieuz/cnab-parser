@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.utils import translation
+from django.shortcuts import render, get_object_or_404
 from .models import Transaction
-from .forms import CNABFileForm
 from .serializers import TransactionSerializer
 from datetime import datetime
 
@@ -23,17 +23,24 @@ def data_extractor(file):
 
 
 def create_transaction(request):
-    if request.method == 'POST':
-        file = request.FILES.get('file')
-        if file:
-            transactions = data_extractor(file)
-            context = {'transactions': transactions}
+    try:
+        if request.method == 'POST':
+            file = request.FILES.get('file')
+            if file:
+                transactions = data_extractor(file)
+                context = {'transactions': transactions}
 
-            for transaction in transactions:
-                Transaction.objects.create(**transaction)
-            
-            return render(request, 'transactions.html', context)
-    return render(request, 'home.html')
+                for transaction in transactions:
+                    serializer = TransactionSerializer(data=transaction)
+                    if serializer.is_valid():
+                        serializer.save()
+                    
+                return render(request, 'transactions.html', context)
+        return render(request, 'home.html')
+    except Exception as e:
+
+        context = {'error': e, 'language_code': translation.get_language()}
+        return render(request, '404.html', context)
 
 
 def list_transactions(request):
@@ -46,6 +53,7 @@ def transactions_detail(request, pk):
     transaction = get_object_or_404(Transaction, pk=pk)
     context = {'transaction': transaction}
     return render(request, 'transaction_detail.html', context)
+
 
 def handle_404(request, exception):
     return render(request, '404.html', status=404)

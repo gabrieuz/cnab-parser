@@ -2,6 +2,16 @@
 {% load static %}
 {% block content %}
 
-<h1>Transaction not found</h1>
+{% if language_code == 'en' %}
+<h1>Sorry. An error has occurred.</h1>
+<p>Check the procedure and try again.</p>
+<p class="text-danger">{{ error }}}</p>
+{% endif %}
+
+{% if language_code == 'pt-br' %}
+<h1>Desculpe. Ocorreu um erro.</h1>
+<p>Verifique o procedimento e tente novamente.</p>
+<p class="text-danger">{{ error }}}</p>
+{% endif %}
 
 {% endblock %}
