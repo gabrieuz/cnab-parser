@@ -2,18 +2,7 @@ from django.db import models
 
 
 class Transaction(models.Model):
-    TRANSACTION_TYPE_CHOICES = (
-        (1, "Débito"),
-        (2, "Boleto"),
-        (3, "Financiamento"),
-        (4, "Crédito"),
-        (5, "Recebimento Empréstimo"),
-        (6, "Vendas"),
-        (7, "Recebimento TED"),
-        (8, "Recebimento DOC"),
-        (9, "Aluguel"),
-    )
-    type = models.IntegerField(choices=TRANSACTION_TYPE_CHOICES)
+    type = models.IntegerField()
     date = models.DateField()
     time = models.TimeField()
     value = models.DecimalField(max_digits=10, decimal_places=2)
