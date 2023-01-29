@@ -30,9 +30,9 @@ A Django web application that parses a CNAB files. This application allows you t
 - The transactions data will be extracted and displayed in a table.
 - Use the search bar in the navbar to search for transactions by CPF.
 
-## Contributing
-This is an open-source project, and contributions are welcome. If you have any ideas or suggestions, feel free to create a pull request.
-
 ## Interface Previews
 ![Interface preview 1](preview1.png)
 ![Interface preview 2](preview2.png)
+
+## Contributing
+This is an open-source project, and contributions are welcome. If you have any ideas or suggestions, feel free to create a pull request.
