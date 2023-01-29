@@ -26,7 +26,7 @@ A Django web application that parses a CNAB files. This application allows you t
 
 ## Usage
 - Go to the homepage and click on the "Escolher arquivo" button.
-- Choose a CNAB file to upload.
+- Choose a CNAB file to upload (CNAB_Example.txt is available as an example).
 - The transactions data will be extracted and displayed in a table.
 - Use the search bar in the navbar to search for transactions by CPF.
 
