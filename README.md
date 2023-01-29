@@ -2,10 +2,12 @@
 
 A Django web application that parses a CNAB files. This application allows you to upload a .txt file in CNAB format, extract the transactions data, and store it in a database. The transaction data can then be viewed, searched through a user-friendly web interface.
 
-## Requirements
-
+## Technology Stack
 - Python 3.x
 - Django 3.x
+- Django Rest Framework
+- SQLite3
+- Bootstrap 5
 
 ## Features
 
