@@ -14,7 +14,7 @@ A Django web application that parses a CNAB files. This application allows you t
 - Upload CNAB file
 - Extract transactions data
 - Show transaction details
-- Transactions by ID route
+- Transactions by ID route: `transaction/<int:id>/`
 - Search transactions by CPF
 
 ## Installation
