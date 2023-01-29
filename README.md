@@ -32,3 +32,7 @@ A Django web application that parses a CNAB files. This application allows you t
 
 ## Contributing
 This is an open-source project, and contributions are welcome. If you have any ideas or suggestions, feel free to create a pull request.
+
+## Interface Previews
+![Interface preview 1](preview1.png)
+![Interface preview 2](preview2.png)
