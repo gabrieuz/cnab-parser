@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<form method="post" enctype="multipart/form-data" class="border border-primary rounded p-lg-4">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="file" class="fw-bold">Escolha o arquivo CNAB</label>
+        <input type="file" name="file" class="form-control form-control-lg mt-lg-3 mb-lg-3" id="formFile">
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+
+{% endblock %}
