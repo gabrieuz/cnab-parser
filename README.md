@@ -16,6 +16,7 @@ A Django web application that parses CNAB files. This application allows you to 
 - Show transaction details
 - Transactions by ID route: `transaction/<int:id>/`
 - Search transactions by CPF
+- File type validation
 
 ## Installation
 - Clone the repository: git clone `https://github.com/gabrieuz/cnab-parser.git`
