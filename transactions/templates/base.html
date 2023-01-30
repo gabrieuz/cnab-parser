@@ -52,6 +52,14 @@
         Array.prototype.slice.call(forms)
             .forEach(function (form) {
                 form.addEventListener('submit', function (event) {
+
+                    if (!verifyFile()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+
+                        return false
+                    }
+                
                     if (!form.checkValidity()) {
                         event.preventDefault()
                         event.stopPropagation()
@@ -61,6 +69,19 @@
                 }, false)
             })
     })()
+
+    function verifyFile() {
+        var file = document.getElementById("formFile").value;
+        var ext = file.split('.').pop();
+        if (ext != "txt") {
+
+            document.getElementById("formFile").classList.add("is-invalid")
+     
+            return false
+        } else {
+            return true
+        }
+    }
 </script>
 
 </html>

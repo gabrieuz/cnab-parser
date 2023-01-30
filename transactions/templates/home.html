@@ -3,13 +3,13 @@
 
 {% block content %}
 
-<form method="post" enctype="multipart/form-data" class="border border-primary rounded p-lg-4 needs-validation" novalidate>
+<form method="post" enctype="multipart/form-data" class="border border-primary rounded p-lg-4 needs-validation" novalidate id="formHome">
     {% csrf_token %}
     <div class="form-group">
         <label for="file" class="fw-bold">Escolha o arquivo CNAB</label>
         <input type="file" name="file" class="form-control form-control-lg mt-lg-3 mb-lg-3" id="formFile" required>
         <div class="invalid-feedback mb-4">
-            Por favor, escolha um arquivo (.txt).
+            Por favor, escolha um arquivo (O tipo deve ser .txt).
         </div>
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
