@@ -24,6 +24,8 @@ A Django web application that parses CNAB files. This application allows you to 
 
 ## Installation
 - Clone the repository: git clone `https://github.com/gabrieuz/cnab-parser.git`
+- Create a virtual environment: `python -m venv venv`
+- Activate the virtual environment: `source venv/bin/activate` (Linux) or `venv\Scripts\activate` (Windows)
 - Install the requirements: `pip install -r requirements.txt`
 - Run migrations: `python manage.py migrate`
 - Run the development server: `python manage.py runserver`
